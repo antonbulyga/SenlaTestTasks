@@ -1,25 +1,24 @@
 package project.Task6;
 
 import project.util.exception.ExitException;
+
 import java.util.ArrayList;
 import java.util.List;
-import static project.util.NumberReader.readNumber;
 
+import static project.util.NumberReader.readNumber;
 
 public class BagFiller {
 
     private List<Item> itemsBeforeOptimize;
     private int capacity;
 
-    public  BagFiller(List<Item> itemsBeforeOptimize, int capacity) {
+    public BagFiller(List<Item> itemsBeforeOptimize, int capacity) {
         this.itemsBeforeOptimize = itemsBeforeOptimize;
         this.capacity = capacity;
     }
 
-
-
     public void display() {
-        if (itemsBeforeOptimize != null  &&  !itemsBeforeOptimize.isEmpty()) {
+        if (itemsBeforeOptimize != null && !itemsBeforeOptimize.isEmpty()) {
             System.out.println("Bag before optimize");
             System.out.println("Capacity : " + capacity);
             System.out.println("Items :");
@@ -29,6 +28,7 @@ public class BagFiller {
             }
         }
     }
+
     public Backpack getOptimizeBag() {
 
         int countItems = itemsBeforeOptimize.size();
@@ -66,28 +66,25 @@ public class BagFiller {
         }
         return new Backpack(fullBag);
     }
-    public static BagFiller create() {
 
-        List<Item> items = new ArrayList<>();
+    public static BagFiller create() {
         int capacity;
+        List<Item> items = new ArrayList<>();
         int weight;
         int cost;
-
-
 
         System.out.println("Enter capacity. Capacity can't be less than 1");
         try {
             capacity = readNumber();
-        }
-        catch (ExitException e){
+        } catch (ExitException e) {
             System.out.println(e.getMessage());
             return null;
         }
 
-        while (true){
-            if(capacity >= 1) {
+        if (capacity >= 1) {
+            while (true) {
                 try {
-                    System.out.println("Enter weight and press enter than enter cost and press enter. Press q to next step\"");
+                    System.out.println("Enter weight and press enter than enter cost and press enter. Press \"e\" to the next step");
                     weight = readNumber();
                     cost = readNumber();
                 } catch (ExitException e) {
@@ -95,23 +92,16 @@ public class BagFiller {
                     break;
                 }
 
-                if(weight >0 && cost >0) {
+                if (weight > 0 && cost > 0) {
                     items.add(new Item(weight, cost));
-
-                }
-                else {
-                    System.out.println("Weight or cost can't be negative");
+                } else {
+                    System.out.println("Weight or cost can't be negative. Try again");
                 }
             }
-            else {
-                System.out.println("Capacity can't be less than one! Try again.");
-                create();
-
-            }
-
+        } else {
+            System.out.println("Capacity can't be less than one! Try again.");
+            return create();
         }
-
         return new BagFiller(items, capacity);
     }
-
 }

@@ -1,12 +1,13 @@
 package project.Task1;
+
 import project.util.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
 
 public class PrimeNumber {
-    public void doItAll() {
+    public void runTask() {
 
-        System.out.println("Enter an integer and press Enter:");
+        System.out.println("Enter an integer and press enter or press \"e\" to back to the main menu");
         int number;
 
         try {
@@ -16,52 +17,50 @@ public class PrimeNumber {
             return;
         }
 
-
-        if (Even(number)) {
+        if (isEven(number)) {
             System.out.println(number + " - number is odd");
         } else {
             System.out.println(number + " - number is even");
         }
-        if(number != 0 && number != 1) {
-            if (Prime(number)) {
+
+        if (number != 0 && number != 1) {
+            if (isPrime(number)) {
                 System.out.println(Math.abs(number) + " - number is prime (the number is taken modulo because prime number can't be negative)");
             } else {
                 System.out.println(Math.abs(number) + " - number is composite (the number is taken modulo because composite number can't be negative)");
             }
-        }
-        else {
+        } else {
             System.out.println("The number isn't prime and isn't composite");
+            return;
         }
     }
 
-    public boolean Prime(int number) {
+    public boolean isPrime(int number) {
         int temp;
         int worknumber;
-        boolean isPrime = true;
+        boolean prime = true;
+
         worknumber = Math.abs(number);
-        if(worknumber == 1){
+        if (worknumber == 1) {
             return false;
         }
-
-            for (int i = 2; i <= worknumber / 2; i++) {
-                temp = worknumber % i;
-                if (temp == 0) {
-                    isPrime = false;
-                    break;
-                }
+        for (int i = 2; i <= worknumber / 2; i++) {
+            temp = worknumber % i;
+            if (temp == 0) {
+                prime = false;
+                break;
             }
-
-        return isPrime;
-    }
-
-    public boolean Even(int number) {
-        boolean isEven = true;
-        if (number % 2 == 0) {
-            isEven = false;
-
         }
-    return isEven;
+        return prime;
     }
 
+    public boolean isEven(int number) {
+        boolean even = true;
+
+        if (number % 2 == 0) {
+            even = false;
+        }
+        return even;
+    }
 }
 

@@ -3,13 +3,14 @@ package project.Task5;
 import project.util.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
+
 import java.util.ArrayList;
 
 public class Palindromes {
 
-    public void doItAll() throws ExitException {
+    public void runTask() {
         ArrayList listOfPalindromes = new ArrayList();
-        System.out.println("Input number from 0 to 100");
+        System.out.println("Input number from 0 to 100 or press \"e\" to back to the main menu");
         int number;
 
         try {
@@ -23,7 +24,7 @@ public class Palindromes {
             for (int i = 0; i < number; i++) {
                 String original = String.valueOf(i);
 
-                if (isPalindrome(original)){
+                if (isPalindrome(original)) {
                     listOfPalindromes.add(original);
                 }
             }
@@ -31,9 +32,9 @@ public class Palindromes {
                 System.out.println(listOfPalindromes.get(i));
             }
         } else {
-            System.out.println("Incorrect input!");
+            System.out.println("Incorrect input! Try again.");
+            runTask();
         }
-
     }
 
     public static Boolean isPalindrome(String original) {

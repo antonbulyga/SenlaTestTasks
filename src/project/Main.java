@@ -1,17 +1,10 @@
 package project;
 
-
 import project.util.ChooseTask;
-import project.util.exception.ExitException;
-
 
 public class Main {
-
-
-    public static void main(String[] args) throws ExitException {
-
+    public static void main(String[] args) {
         ChooseTask chooseTask = new ChooseTask();
-        chooseTask.chooser();
-
+        chooseTask.choose();
     }
 }

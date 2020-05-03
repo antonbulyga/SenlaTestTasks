@@ -14,12 +14,11 @@ public class Item {
         return weight;
     }
 
-
     public int getCost() {
         return cost;
     }
 
     public String str() {
-        return  " [weight = " + weight + ", cost = " + cost + "]";
+        return " [weight = " + weight + ", cost = " + cost + "]";
     }
 }

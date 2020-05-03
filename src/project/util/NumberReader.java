@@ -13,7 +13,7 @@ public class NumberReader {
     private static Integer number;
 
     public static Integer readNumber() throws ExitException {
-    String earlyNumber = "";
+        String earlyNumber = "";
 
 
         try {
@@ -23,12 +23,12 @@ public class NumberReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (earlyNumber.equals("q")) {
+        if (earlyNumber.equals("e")) {
             throw new ExitException("User logged out.");
         }
         try {
             number = Integer.parseInt(earlyNumber);
-        } catch (NumberFormatException err) {
+        } catch (NumberFormatException e) {
             System.out.println("You entered not integer, try again");
             readNumber();
         }
