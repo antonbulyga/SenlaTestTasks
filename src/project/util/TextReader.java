@@ -10,21 +10,17 @@ public class TextReader {
 
     private static String text;
 
-
     public static String readText() throws ExitException {
 
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             text = reader.readLine();
-
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         if (text.equals("e")) {
             throw new ExitException("User logged out.");
         }
-
         return text;
     }
 }
