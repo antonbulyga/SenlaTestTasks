@@ -1,7 +1,7 @@
 package project.util;
 
 import project.task1.PrimeNumber;
-import project.Task2.MathOpportunities;
+import project.task2.MathOpportunities;
 import project.task3.StringOperations;
 import project.task4.CountWordInText;
 import project.task5.Palindromes;

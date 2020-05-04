@@ -1,4 +1,4 @@
-package project.Task2;
+package project.task2;
 
 import project.exception.ExitException;
 
