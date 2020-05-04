@@ -1,4 +1,4 @@
-package project.Task6;
+package project.task6;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class Backpack {
     public void display() {
         if (items != null && !items.isEmpty()) {
             System.out.println("Bag after optimize");
-            System.out.println("Weight of the bag : " + this.weight);
+            System.out.println("Weight of the backpack : " + this.weight);
             System.out.println("Items :");
 
             for (Item item : items) {
@@ -32,7 +32,6 @@ public class Backpack {
             }
         } else {
             System.out.println("Sorry, no item was placed in the backpack");
-            return;
         }
     }
 }

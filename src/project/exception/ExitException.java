@@ -1,4 +1,4 @@
-package project.util.exception;
+package project.exception;
 
 public class ExitException extends Exception {
     public ExitException() {
@@ -8,6 +8,5 @@ public class ExitException extends Exception {
     public ExitException(String message) {
         super(message);
     }
-
 }
 

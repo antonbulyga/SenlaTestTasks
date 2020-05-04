@@ -1,12 +1,11 @@
-package project.Task1;
+package project.task1;
 
-import project.util.exception.ExitException;
+import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
 
 public class PrimeNumber {
     public void runTask() {
-
         System.out.println("Enter an integer and press enter or press \"e\" to back to the main menu");
         int number;
 
@@ -31,11 +30,10 @@ public class PrimeNumber {
             }
         } else {
             System.out.println("The number isn't prime and isn't composite");
-            return;
         }
     }
 
-    public boolean isPrime(int number) {
+    private boolean isPrime(int number) {
         int temp;
         int worknumber;
         boolean prime = true;
@@ -54,7 +52,7 @@ public class PrimeNumber {
         return prime;
     }
 
-    public boolean isEven(int number) {
+    private boolean isEven(int number) {
         boolean even = true;
 
         if (number % 2 == 0) {

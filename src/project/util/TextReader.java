@@ -1,6 +1,6 @@
 package project.util;
 
-import project.util.exception.ExitException;
+import project.exception.ExitException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,11 +15,11 @@ public class TextReader {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             text = reader.readLine();
+            if (text.equals("e")) {
+                throw new ExitException("User logged out.");
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
-        }
-        if (text.equals("e")) {
-            throw new ExitException("User logged out.");
         }
         return text;
     }

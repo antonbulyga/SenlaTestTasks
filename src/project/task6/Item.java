@@ -1,5 +1,4 @@
-package project.Task6;
-
+package project.task6;
 
 public class Item {
     private int weight;

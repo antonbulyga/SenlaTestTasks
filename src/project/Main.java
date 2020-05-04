@@ -1,10 +1,11 @@
 package project;
 
-import project.util.ChooseTask;
+import project.util.TaskChooser;
+
 
 public class Main {
     public static void main(String[] args) {
-        ChooseTask chooseTask = new ChooseTask();
+        TaskChooser chooseTask = new TaskChooser();
         chooseTask.choose();
     }
 }

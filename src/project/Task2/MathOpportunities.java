@@ -1,33 +1,31 @@
 package project.Task2;
 
-import project.util.exception.ExitException;
+import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
 
 public class MathOpportunities {
 
-    int gcd(int a, int b) {
+    private int gcd(int a, int b) {
         if (a == 0) {
             return b;
         }
         return gcd(b % a, a);
     }
 
-    // method to return LCM of two numbers
-    int lcm(int a, int b) {
+    private int lcm(int a, int b) {
         return (a * b) / gcd(a, b);
     }
 
     public void runTask() {
+        System.out.println("Enter the first number and press enter. Enter the second number and press enter." +
+                " The number should be more than 0, or press \"e\" to back to the main menu ");
         int a;
         int b;
 
-        System.out.println("Enter the first number and press enter. Enter the second number and press Enter." +
-                " Number should be more than 0, or press \"e\" to back to the main menu ");
         try {
             a = readNumber();
             b = readNumber();
-
         } catch (ExitException e) {
             System.out.println(e.getMessage());
             return;

@@ -1,6 +1,6 @@
-package project.Task6;
+package project.task6;
 
-import project.util.exception.ExitException;
+import project.exception.ExitException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,8 +72,8 @@ public class BagFiller {
         List<Item> items = new ArrayList<>();
         int weight;
         int cost;
-
         System.out.println("Enter capacity. Capacity can't be less than 1");
+
         try {
             capacity = readNumber();
         } catch (ExitException e) {
@@ -88,10 +88,9 @@ public class BagFiller {
                     weight = readNumber();
                     cost = readNumber();
                 } catch (ExitException e) {
-                    System.out.println("You finished enter weight and cost");
+                    System.out.println("You have finished entering the weight and cost");
                     break;
                 }
-
                 if (weight > 0 && cost > 0) {
                     items.add(new Item(weight, cost));
                 } else {
