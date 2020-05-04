@@ -23,12 +23,12 @@ public class StringOperations {
     }
 
     private String[] capitalSymbol(String[] words) {
+        StringBuilder outputTemp = new StringBuilder();
         String output = "";
         for (String word : words) {
             String first = word.substring(0, 1).toUpperCase();
             String all = word.substring(1);
-            StringBuilder outputTemp = new StringBuilder(first);
-            output += outputTemp.append(all).append(" ").toString();
+           output = outputTemp.append(first).append(all).append(" ").toString();
         }
         String[] newWord = output.split("\\s+");
         System.out.println("String where each word is capitalized : " + output);
