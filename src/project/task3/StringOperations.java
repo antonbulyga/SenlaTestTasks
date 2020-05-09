@@ -1,12 +1,13 @@
 package project.task3;
 
+import project.Task;
 import project.exception.ExitException;
 
 import static project.util.TextReader.readText;
 
 import java.util.Arrays;
 
-public class StringOperations {
+public class StringOperations implements Task {
 
     private String[] wordsCounter(String message) {
         String[] words = message.replaceAll("\\p{Punct}|\\d", "").split("\\s+");
@@ -34,7 +35,7 @@ public class StringOperations {
         System.out.println("String where each word is capitalized : " + output);
         return newWord;
     }
-
+    @Override
     public void runTask() {
         System.out.println("Enter the sentence and press enter or press \"e\" to back to the main menu");
         String message;

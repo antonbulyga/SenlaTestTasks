@@ -1,15 +1,16 @@
 package project.task4;
 
+import project.Task;
 import project.exception.ExitException;
 
 import java.util.HashMap;
 
 import static project.util.TextReader.readText;
 
-public class CountWordInText {
+public class CountWordInText implements Task {
 
     private String myWord;
-
+    @Override
     public void runTask() {
         System.out.println("Enter text and press enter or press \"e\" to back to the main menu");
         String string;

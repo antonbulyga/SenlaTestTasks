@@ -1,5 +1,6 @@
 package project.task6;
 
+import project.Task;
 import project.exception.ExitException;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 import static project.util.NumberReader.readNumber;
 
-public class BagFiller {
+public class BagFiller implements Task {
 
     private List<Item> itemsBeforeOptimize;
     private int capacity;
@@ -30,17 +31,13 @@ public class BagFiller {
     }
 
     public Backpack getOptimizeBag() {
-
         int countItems = itemsBeforeOptimize.size();
         int[][] matrix = new int[countItems + 1][capacity + 1];
-
-        for (int i = 0; i <= capacity; i++)
+        for (int i = 0; i <= capacity; i++) {
             matrix[0][i] = 0;
-
+        }
         for (int i = 1; i <= countItems; i++) {
-
             for (int j = 0; j <= capacity; j++) {
-
                 if (itemsBeforeOptimize.get(i - 1).getWeight() > j) {
                     matrix[i][j] = matrix[i - 1][j];
                 } else {
@@ -51,7 +48,6 @@ public class BagFiller {
                 }
             }
         }
-
         int res = matrix[countItems][capacity];
         int freeCapacity = capacity;
         List<Item> fullBag = new ArrayList<>();
@@ -73,14 +69,12 @@ public class BagFiller {
         int weight;
         int cost;
         System.out.println("Enter capacity. Capacity can't be less than 1");
-
         try {
             capacity = readNumber();
         } catch (ExitException e) {
             System.out.println(e.getMessage());
             return null;
         }
-
         if (capacity >= 1) {
             while (true) {
                 try {
@@ -102,5 +96,12 @@ public class BagFiller {
             return create();
         }
         return new BagFiller(items, capacity);
+    }
+
+    @Override
+    public void runTask() {
+        display();
+        Backpack backpack = this.getOptimizeBag();
+        backpack.display();
     }
 }

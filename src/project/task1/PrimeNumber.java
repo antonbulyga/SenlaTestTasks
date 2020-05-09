@@ -1,10 +1,12 @@
 package project.task1;
 
+import project.Task;
 import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
 
-public class PrimeNumber {
+public class PrimeNumber implements Task {
+    @Override
     public void runTask() {
         System.out.println("Enter an integer and press enter or press \"e\" to back to the main menu");
         int number;

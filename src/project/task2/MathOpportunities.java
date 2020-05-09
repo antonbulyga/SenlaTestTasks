@@ -1,10 +1,11 @@
 package project.task2;
 
+import project.Task;
 import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
 
-public class MathOpportunities {
+public class MathOpportunities implements Task {
 
     private int gcd(int a, int b) {
         if (a == 0) {
@@ -16,7 +17,7 @@ public class MathOpportunities {
     private int lcm(int a, int b) {
         return (a * b) / gcd(a, b);
     }
-
+    @Override
     public void runTask() {
         System.out.println("Enter the first number and press enter. Enter the second number and press enter." +
                 " The number should be more than 0, or press \"e\" to back to the main menu ");

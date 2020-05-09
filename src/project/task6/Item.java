@@ -1,6 +1,7 @@
 package project.task6;
 
 public class Item {
+
     private int weight;
     private int cost;
 

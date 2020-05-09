@@ -1,5 +1,6 @@
 package project.task5;
 
+import project.Task;
 import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;
@@ -7,11 +8,12 @@ import static project.util.NumberReader.readNumber;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Palindromes {
+public class Palindromes implements Task {
 
+    @Override
     public void runTask() {
         System.out.println("Input number from 0 to 100 or press \"e\" to back to the main menu");
-        List listOfPalindromes = new ArrayList();
+        List<String> listOfPalindromes = new ArrayList();
         int number;
 
         try {
@@ -27,8 +29,8 @@ public class Palindromes {
                     listOfPalindromes.add(original);
                 }
             }
-            for (int i = 0; i < listOfPalindromes.size(); i++) {
-                System.out.println(listOfPalindromes.get(i));
+            for(String i: listOfPalindromes){
+                System.out.println(i);
             }
 
         } else {

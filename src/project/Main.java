@@ -1,11 +1,11 @@
 package project;
 
-import project.util.TaskChooser;
+import project.util.TaskFactory;
 
 
 public class Main {
     public static void main(String[] args) {
-        TaskChooser chooseTask = new TaskChooser();
+        TaskFactory chooseTask = new TaskFactory();
         chooseTask.choose();
     }
 }
