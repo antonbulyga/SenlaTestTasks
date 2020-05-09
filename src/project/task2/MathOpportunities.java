@@ -1,6 +1,6 @@
 package project.task2;
 
-import project.Task;
+import project.Interface.Task;
 import project.exception.ExitException;
 
 import static project.util.NumberReader.readNumber;

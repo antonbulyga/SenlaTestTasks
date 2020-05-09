@@ -1,6 +1,6 @@
 package project.task6;
 
-import project.Task;
+import project.Interface.Task;
 import project.exception.ExitException;
 
 import java.util.ArrayList;

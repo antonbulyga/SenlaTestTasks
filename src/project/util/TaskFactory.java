@@ -1,6 +1,6 @@
 package project.util;
 
-import project.Task;
+import project.Interface.Task;
 import project.task1.PrimeNumber;
 import project.task2.MathOpportunities;
 import project.task3.StringOperations;
@@ -9,7 +9,6 @@ import project.task5.Palindromes;
 
 import static project.util.NumberReader.readNumber;
 
-import project.task6.Backpack;
 import project.task6.BagFiller;
 import project.exception.ExitException;
 

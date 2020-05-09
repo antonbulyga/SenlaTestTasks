@@ -1,6 +1,6 @@
 package project.task3;
 
-import project.Task;
+import project.Interface.Task;
 import project.exception.ExitException;
 
 import static project.util.TextReader.readText;
